@@ -1,0 +1,14 @@
+/* admin-dashboard styles */
+.admin-dashboard {
+  padding: 20px;
+  color: #333;
+}
+
+.stats {
+  margin-bottom: 20px;
+}
+
+.charts {
+  margin-top: 20px;
+  width: 100%;
+}

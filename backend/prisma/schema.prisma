@@ -1,0 +1,17 @@
+// prisma/schema.prisma
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"  // Le fichier de base de données sera créé dans le dossier `backend`
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model View {
+  id        Int      @id @default(autoincrement())
+  userId    String
+  contentId String
+  duration  Int
+  timestamp DateTime @default(now())
+}

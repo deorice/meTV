@@ -1,0 +1,8 @@
+-- CreateTable
+CREATE TABLE "View" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "userId" TEXT NOT NULL,
+    "contentId" TEXT NOT NULL,
+    "duration" INTEGER NOT NULL,
+    "timestamp" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
