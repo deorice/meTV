@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: metv-backend
+    env: node
+    plan: free
+    buildCommand: "cd backend && npm ci"
+    startCommand: "cd backend && node server.js"
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATA_DIR
+        value: /data
+      - key: ADMIN_TOKEN
+        sync: false
+    disk:
+      name: data
+      mountPath: /data
+      sizeGB: 1
