@@ -14,7 +14,7 @@ import * as ScreenOrientation from "expo-screen-orientation";
 import { StatusBar } from "expo-status-bar";
 
 // ⬇️ Mets TON IP locale ou ton domaine backend ici
-const API_BASE = "http://192.168.8.103:4000";
+const API_BASE = "https://metv-backend.onrender.com";
 
 export default function App() {
   const [streamUrl, setStreamUrl] = useState<string | null>(null);
