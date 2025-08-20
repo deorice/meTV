@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "frontend",
-    "slug": "frontend",
+    "name": "meTV",
+    "slug": "metv",
     "version": "1.0.0",
     "orientation": "default",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/iconTV.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
