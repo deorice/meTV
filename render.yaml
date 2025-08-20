@@ -1,19 +1,21 @@
+# render.yaml (racine du repo)
 services:
   - type: web
     name: metv-backend
     env: node
     plan: free
-    buildCommand: "cd backend && npm ci"
-    startCommand: "cd backend && node server.js"
+    rootDir: backend
+    buildCommand: npm ci && npx prisma generate
+    startCommand: node server.js
     autoDeploy: true
     envVars:
-      - key: NODE_ENV
-        value: production
-      - key: DATA_DIR
-        value: /data
+      - key: NODE_VERSION
+        value: 22
       - key: ADMIN_TOKEN
-        sync: false
-    disk:
-      name: data
-      mountPath: /data
-      sizeGB: 1
+        sync: false           # on la remplira dans le dashboard Render
+      - key: DATABASE_URL
+        value: file:/data/dev.db
+    disks:
+      - name: data
+        mountPath: /data
+        sizeGB: 1

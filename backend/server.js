@@ -56,6 +56,18 @@ app.post("/admin/stream", (req, res) => {
   return res.json({ ok: true, url: currentStreamUrl });
 });
 
+// —— Healthcheck simple pour Render
+app.get("/healthz", async (req, res) => {
+  try {
+    // requête légère sur la DB pour valider Prisma + SQLite
+    await prisma.$queryRaw`SELECT 1`;
+    res.json({ ok: true });
+  } catch (e) {
+    res.status(500).json({ ok: false, error: e?.message || "db error" });
+  }
+});
+
+
 // —— Page Admin (UI légère : utiliser flux / prévisualiser / enregistrer) ——
 app.get("/admin", (req, res) => {
   res.setHeader("Content-Type", "text/html; charset=utf-8");
