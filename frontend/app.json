@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "meTV",
-    "slug": "metv",
+    "slug": "meTV",
     "version": "1.0.0",
     "orientation": "default",
     "icon": "./assets/iconTV.png",
