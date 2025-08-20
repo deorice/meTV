@@ -12,10 +12,6 @@ services:
       - key: NODE_VERSION
         value: 22
       - key: ADMIN_TOKEN
-        sync: false           # on la remplira dans le dashboard Render
+        sync: false  # on la remplira dans le dashboard Render
       - key: DATABASE_URL
-        value: file:/data/dev.db
-    disks:
-      - name: data
-        mountPath: /data
-        sizeGB: 1
+        value: file:/data/dev.db  # Modifier selon la configuration de votre base de données
